@@ -24,7 +24,7 @@ function createFetchSpeechServicesCredentials() {
     if (now > expireAfter) {
       expireAfter = now + 300000;
       lastPromise = fetch('https://webchat-mockbot.azurewebsites.net/speechservices/token', {
-        method: 'POST'
+        method: 'POST', mode: 'no-cors'
       }).then(
         res => res.json(),
         err => {
@@ -49,7 +49,7 @@ const fetchSpeechServicesCredentials = createFetchSpeechServicesCredentials();
   // Tokens are more secure. To learn about the differences between secrets and tokens.
   // and to understand the risks associated with using secrets, visit https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication?view=azure-bot-service-4.0
 
-  const res = await fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST' });
+  const res = await fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST', mode: 'no-cors' });
   const { token } = await res.json();
 
   // Create the ponyfill factory function, which can be called to create a concrete implementation of the ponyfill.
