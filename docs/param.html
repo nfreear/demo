@@ -1,8 +1,13 @@
 <!doctype html> <title> URL params test </title>
 
+<meta name="og:published_time" content="2021-05-25">
+<link rel=gist href="https://gist.github.com/nfreear/ba767c853dced256e85514515dc860ff">
+
+
 <style>
-  body { color: #222; font: 1rem/1.7 sans-serif; margin: .2rem; }
-  pre { font-size: 1.05rem; }
+  body { color: #222; font: 1rem/1.7 sans-serif; margin: .1rem; }
+  pre { font-size: 1.1rem; }
+  pre, p { background: #eee; border: 1px solid #999; padding: .1rem; }
 </style>
 
 
@@ -29,6 +34,6 @@
 
   console.warn('URL parameters:', PARAMS, window.location);
 
-  PRE.textContent = JSON.stringify(PARAMS, null, '\t');
+  PRE.textContent = JSON.stringify(PARAMS, null, 2); // '\t'
   URL.textContent = 'URL: ' + window.location.href;
 </script>

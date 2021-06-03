@@ -1,6 +1,9 @@
 /**
- * @see https://github.com/microsoft/BotFramework-WebChat/tree/main/samples/03.speech/b.cognitive-speech-services-js
+ * @STATUS Not working !
  *
+ * A Mock-bot with speech.
+ *
+ * @see https://github.com/microsoft/BotFramework-WebChat/tree/main/samples/03.speech/b.cognitive-speech-services-js
  * @author NDF, 27-May-2021.
  */
 
