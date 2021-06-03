@@ -1,0 +1,34 @@
+<!doctype html> <title> URL params test </title>
+
+<style>
+  body { color: #222; font: 1rem/1.7 sans-serif; margin: .2rem; }
+  pre { font-size: 1.05rem; }
+</style>
+
+
+<h1> URL parameters </h1>
+
+<pre id="params"></pre>
+
+<p id="url"></p>
+
+
+<script>
+  const PRE = document.querySelector('#params');
+  const URL = document.querySelector('#url');
+  const QUERY = window.location.search.replace(/^\?/, '').split('&');
+  const PARAMS = {};
+
+  QUERY.forEach(query => {
+    const parts = query.split('=');
+
+    if (parts && parts[0]) {
+      PARAMS[parts[0]] = decodeURIComponent(parts[1]) || null;
+    }
+  });
+
+  console.warn('URL parameters:', PARAMS, window.location);
+
+  PRE.textContent = JSON.stringify(PARAMS, null, '\t');
+  URL.textContent = 'URL: ' + window.location.href;
+</script>
